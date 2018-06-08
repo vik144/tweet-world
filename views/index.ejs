@@ -1,0 +1,38 @@
+<% include header %>
+<a href="/new-entry" class="btn btn-primary">Add New Tweet</a>
+<% if(entries.length) { %> 
+	<% entries.forEach(function(entry){ %>
+		<div class="card p-3 mt-3">
+			<h4 class="card-title">
+				
+				<%= entry.title %>
+			</h4>
+			<p class="text-muted">
+					<%= entry.published %>
+				</p>
+			<div class="card-text">
+				<%= entry.content %>
+			</div>
+		</div>
+
+
+
+	<%})%>
+
+
+
+<%} else { %>
+	<div class="alert alert-secondary mt-5">
+  <h1 class="lead">No Tweets</h1>
+  <a href="/new-entry">Add some tweets!</a>
+</div>
+
+
+<% } %>
+
+
+<% include footer %>
+
+
+
+
